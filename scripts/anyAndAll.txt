@@ -1,0 +1,7 @@
+# 'Any' and 'All' list functions using folds vs direct recursion
+
+# [1] must load prelude.txt before loading this file
+
+let Any = λ p xs . Not (Null (Filter p xs));
+
+let All = λ p xs . Not (Any (Compose Not p) xs);

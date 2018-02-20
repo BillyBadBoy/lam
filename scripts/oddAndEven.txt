@@ -1,0 +1,13 @@
+# mutually-recursive odd/even functions
+
+# [1] must load prelude.txt before loading this file
+
+letrec
+{
+    let IsEven = \ n . (IsZero n) T (IsOdd  (Pred n));
+    let IsOdd  = \ n . (IsZero n) F (IsEven (Pred n));
+} :
+{
+    let T = True;
+    let F = False;
+}

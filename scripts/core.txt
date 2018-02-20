@@ -1,0 +1,71 @@
+# functional combinators
+
+let Id      = λ x . x;
+let Const   = λ c . (λ x . c);
+let Compose = λ f g . (λ x . f (g x));
+
+# logical values and operators
+
+let True  = λ x y . x;
+let False = λ x y . y;
+
+let IfThenElse = λ p x y . p x y;
+
+let And = λ x y . ITE x y F : {let T=True; let F=False; let ITE=IfThenElse;}
+let Or  = λ x y . ITE x T y : {let T=True; let F=False; let ITE=IfThenElse;}
+let Not = λ x   . ITE x F T : {let T=True; let F=False; let ITE=IfThenElse;}
+
+let BoolEq = λ x y . Or (And x y) (And (Not x) (Not y));
+
+# lists
+
+let Nil    = λ x . True;
+let Pair   = λ x y . (λ f . f x y);
+
+let First  = λ p . p True;
+let Second = λ p . p False;
+
+let Null   = λ p . p (λ x y . False);
+
+# convenience functions for creaing small lists
+let List2 = λ x y . Pair x (Pair y Nil);
+let List3 = λ x y z . Pair x (Pair y (Pair z Nil));
+let List4 = λ w x y z . Pair w (Pair x (Pair y (Pair z Nil)));
+
+# folds, map & filter
+
+letrec Foldr = λ f z xs . ITE (Null xs) z (f Head (Foldr f z Tail)) :
+{
+   let ITE  = IfThenElse;
+
+   let Head = First  xs;
+   let Tail = Second xs;
+}
+
+let Map = λ f xs . Foldr G Nil xs :
+{
+  let G = λ x ys . Pair (f x) ys;
+}
+
+let Filter = λ p xs . Foldr G Nil xs :
+{
+  let G = λ x xs . IfThenElse (p x) (Pair x xs) xs;
+}
+
+# Church numerals
+
+let Zero = λ f . (λ x .   x);
+let One  = λ f . (λ x . f x);
+
+let Plus = λ m n . λ f . Compose (m f) (n f);
+
+let Succ = Plus One;
+let Pred = λ n . First (n Inc (Pair Zero Zero)) :
+{
+  let Inc = λ x . Pair (Second x) (Succ (Second x));
+}
+
+let Mult = λ x y . y (Plus x) Zero;
+let Pow  = λ x y . y (Mult x) One;
+
+let IsZero = λ n . n (λ x . False) True;

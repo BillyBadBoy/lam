@@ -1,0 +1,6 @@
+# recursive factorial implementation
+
+# [1] must load prelude.txt before loading this file
+# [2] try this function with small numbers unless you want to wait FOREVER!
+
+letrec Factorial = λ n . IfThenElse (IsZero n) One (Mult n (Factorial (Pred n)));

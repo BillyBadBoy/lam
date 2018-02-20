@@ -2,13 +2,12 @@ name:                lam
 version:             0.1.0.0
 github:              "githubuser/foo"
 license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2018 Author name here"
+author:              "William Morgan"
+maintainer:          "william.morgan@hotmail.co.uk"
+copyright:           "2018 William Morgan"
 
 extra-source-files:
 - README.md
-- ChangeLog.md
 
 # Metadata used when publishing your package
 # synopsis:            Short description of your package
@@ -25,13 +24,19 @@ dependencies:
 library:
   source-dirs: src
 
+executables:
+  lam-exe:
+    main:                Main.hs
+    source-dirs:         app
+    dependencies:
+    - lam
+
 tests:
-  foo-test:
+  lam-test:
     main:                Spec.hs
     source-dirs:         test
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
     dependencies:
+    - HUnit
+    - tasty
+    - tasty-hunit
     - lam
