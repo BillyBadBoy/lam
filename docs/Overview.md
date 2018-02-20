@@ -24,7 +24,7 @@ Named expressions live inside an environment. References are translated into lam
 Named expressions and environments are defined in [Env.hs](../src/Env.hs)
 
 ### Parser syntax
-A simple [parser](./Syntax.md) allows named expressions to be created from scripts that resemble a primitive programming language. The parser is implemented using the approach described by Erik Meijer in his [Haskell course] (https://www.edx.org/course/introduction-functional-programming-delftx-fp101x-0).
+A simple [parser](./Syntax.md) allows named expressions to be created from scripts that resemble a primitive programming language. The parser is implemented using the approach described by Erik Meijer in his [Haskell course](https://www.edx.org/course/introduction-functional-programming-delftx-fp101x-0).
 
 The parser is defined in [Parse.hs](../src/Parse.hs). 
 
