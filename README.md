@@ -78,3 +78,4 @@ which is recognized as: 2
 Enter cmd:
 quit
 ````
+More information about using the repl can be found [here](./docs/Repl/md)
