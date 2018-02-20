@@ -1,4 +1,4 @@
-# lam
+# Lam
 This repo contains my experiments with untyped lambda calculus implemented in Haskell. I got the idea from the [Futurelearn Haskell mooc](https://www.futurelearn.com/courses/functional-programming-haskell), which I did a while back. It's all implemented from first principles using only stuff available from the Haskell prelude.
 
 There are some notes on the implementation [here](./docs/Overview.md)
