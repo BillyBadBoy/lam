@@ -112,7 +112,7 @@ evalInt Factorial N3
 which is recognized as: 6                          // same answer but cast to integer
 > end.
 Enter cmd:
-evalIntAll Factorial N3                            // same calculation by showing reductions
+evalIntAll Factorial N3                            // same calculation but showing reductions
 > Expression evaluates to:
 step 0:
 (λf⋅(λx⋅f (x x)) (λx⋅f (x x))) (λf' n⋅(λp x y⋅p x y) ((λn⋅n (λx x y⋅y) (λx y⋅x)) n) (λf x⋅f x) ((λx y⋅y ((λm
