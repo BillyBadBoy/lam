@@ -133,7 +133,7 @@ step 2:
 (λf' n⋅(λp x y⋅p x y) ((λn⋅n (λx x y⋅y) (λx y⋅x)) n) (λf x⋅f x) ((λx y⋅y ((λm n f⋅(λf g x⋅f (g x)) (m f) (n
 f)) x) (λf x⋅x)) n (f' ((λn⋅(λp⋅p (λx y⋅x)) (n (λx⋅(
 
-etc
+etc (another 390 reductions !!!)
 ````
 
 The file [`core.txt`](../scripts/core.txt) (which was used in the above example) contains some standard lambda calculus encodings for logic, lists and arithmetic. It's based on material from the [Futurelearn Haskell mooc](https://www.futurelearn.com/courses/functional-programming-haskell) and the wikipedia page on [lambda calculus] (https://en.wikipedia.org/wiki/Lambda_calculus).
