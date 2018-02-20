@@ -8,7 +8,7 @@ The design is layered, with each layer building on the previous. The layers are 
 The base layer contains lambda expressions along with certain key functions related to α and β conversion. Lambda Expressions are represented as a Haskell data type:
 
 ````haskell
-data Λ = V Var | A Λ Λ | Λ Var Λ     -- constructors for (i) terms (ii) applications and (iii) abstractions
+data Λ = V Var | A Λ Λ | Λ Var Λ     -- constructors for (1) terms (2) applications (3) abstractions
 ````
 
 Lambda expressions are anonymous - there is no concept of a named expression. This means that an expression can only be re-used by literally copying it in its entirety (since it can't be referred to by name). This limitation is remedied by *Named Expressions*.
