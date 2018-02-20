@@ -140,7 +140,7 @@ The file [`core.txt`](../scripts/core.txt) (which was used in the above example)
 
 Note that it's important to load files in the right order because expressions may only refer to previously defined epressions in their bodies. Furthermore no checks are made when files are loaded - it is only when a calculation is attempted that unresolved references are discovered.
 
-Calculations may not terminate, in which case the program must be stopped with `ctl'c`. This will always happen if you attempt to evaluate a bare recursive function (i.e. without supplying its arguments) So:
+Calculations may not terminate, in which case the program must be stopped with `ctl-c`. This will always happen if you attempt to evaluate a bare recursive function (i.e. without supplying its arguments) So:
 ````haskell
 evalInt Factorial N3                             // this is OK
 
