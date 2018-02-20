@@ -39,7 +39,7 @@ IsOdd  = F (λ x y . y)      // 2nd element of F
 ````
 These are definitions of `IsEven` and `IsOdd` in terms of `F`, which we can substitute back into the definition of `F` (to remove the explicit references to `IsEven` and `IsOdd`) :
 ````haskell
-F = λ f . f  (λn.(IsZero n) True (F (λ x y . y) (Pred n)))  (λn.(IsZero n) False (F (λ x y . x) (Pred n)))
+F = λ f . f (λn.(IsZero n) True (F (λ x y . y) (Pred n))) (λn.(IsZero n) False (F (λ x y . x) (Pred n)))
                                   ^^^^^^^^^^^^^                                   ^^^^^^^^^^^^^
 ````
 Notice that there are no references to `IsEven` or `IsOdd` in this equation. This is a definition of `F` that includes references to `F` in its body - i.e. this is an example of simple recursion.
