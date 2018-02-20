@@ -19,12 +19,12 @@ Lambda expressions are defined in [Terms.hs](../src/Terms.hs)
 A named expression is similar to a lambda expression except that it has a name and its body may itself contain references to other named expressions. This allows complex expressions to be defined conveniently by re-using earlier definitions, but it's really no more than syntactic sugar because all references are translated into raw anonymous lambda expressions before evaluation. (This translation is particularly interesting when [simple](./SimpleRecursion.md) or [mutual](./MutualRecursion.md) recursion is involved)
 
 ##### Environment
-Named expressions live inside an environment. References are transalated into lambda expressions by looking them up in the environment. 
+Named expressions live inside an environment. References are translated into lambda expressions by looking them up in the environment. 
 
 Named expressions and environments are defined in [Env.hs](../src/Env.hs)
 
 ### Parser syntax
-A simple [parser](./Syntax.md) allows named expressions to be created from scripts that resemble a primitive programming language. 
+A simple [parser](./Syntax.md) allows named expressions to be created from scripts that resemble a primitive programming language. The parser is implemented using the approach described by Erik Meijer in his [Haskell course] (https://www.edx.org/course/introduction-functional-programming-delftx-fp101x-0).
 
 The parser is defined in [Parse.hs](../src/Parse.hs). 
 
