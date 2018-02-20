@@ -146,4 +146,4 @@ evalInt Factorial N3                             // this is OK
 
 eval Factorial                                   // this won't terminate
 ````
-Even if calculation terminates it may not do so in a reasonable amount of time. Doing `eval Factorial N5` should return quickly, but `evalAll Factorial N5` might take a while. Use only small numbers in calculations, and stick to short lists.
+Even if a calculation terminates it may not do so in a reasonable amount of time. Doing `eval Factorial N5` should return quickly, but `evalAll Factorial N5` might take a while. Use only small numbers in calculations, and stick to short lists.
