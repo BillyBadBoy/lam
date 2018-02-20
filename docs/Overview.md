@@ -8,7 +8,7 @@ The design is layered, with each layer building on the previous. The layers are 
 The base layer contains lambda expressions along with certain key functions related to α and β conversion. Lambda Expressions are represented as a Haskell data type:
 
 ````haskell
-data Λ = V Var | A Λ Λ | Λ Var Λ
+data Λ = V Var | A Λ Λ | Λ Var Λ     -- constructors for (i) terms (ii) applications and (iii) abstractions
 ````
 
 Lambda expressions are anonymous - there is no concept of a named expression. This means that an expression can only be re-used by literally copying it in its entirety (since it can't be referred to by name). This limitation is remedied by *Named Expressions*.
@@ -19,7 +19,7 @@ Lambda expressions are defined in [Terms.hs](../src/Terms.hs)
 A named expression is similar to a lambda expression except that it has a name and its body may itself contain references to other named expressions. This allows complex expressions to be defined conveniently by re-using earlier definitions, but it's really no more than syntactic sugar because all references are translated into raw anonymous lambda expressions before evaluation. (This translation is particularly interesting when [simple](./SimpleRecursion.md) or [mutual](./MutualRecursion.md) recursion is involved)
 
 ##### Environment
-Named expressions live inside an environment. References are translated into lambda expressions by looking them up in the environment. 
+Named expressions live inside an environment. References are translated into lambda expressions by looking them up in the environment. An environment is an ordered structure insofar as expressions can only refer to named expressions added earlier. In addition named expressions may be private, meaning that only some expressions may refer to them.
 
 Named expressions and environments are defined in [Env.hs](../src/Env.hs)
 
