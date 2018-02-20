@@ -136,7 +136,7 @@ f)) x) (λf x⋅x)) n (f' ((λn⋅(λp⋅p (λx y⋅x)) (n (λx⋅(
 etc (another 390 reductions !!!)
 ````
 
-The file [`core.txt`](../scripts/core.txt) (which was used in the above example) contains some standard lambda calculus encodings for logic, lists and arithmetic. It's based on material from the [Futurelearn Haskell mooc](https://www.futurelearn.com/courses/functional-programming-haskell) and the wikipedia page on [lambda calculus] (https://en.wikipedia.org/wiki/Lambda_calculus).
+The file [`core.txt`](../scripts/core.txt) (which was used in the above example) contains some standard lambda calculus encodings for logic, lists and arithmetic. It's based on material from the [Futurelearn Haskell mooc](https://www.futurelearn.com/courses/functional-programming-haskell) and the wikipedia page on [lambda calculus](https://en.wikipedia.org/wiki/Lambda_calculus).
 
 Note that it's important to load files in the right order because expressions may only refer to previously defined epressions in their bodies. Furthermore no checks are made when files are loaded - it is only when a calculation is attempted that unresolved references are discovered.
 
