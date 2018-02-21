@@ -30,6 +30,7 @@ Notes:
 
 * new definitions must adhere to the syntax expected by the [parser](./Syntax.md)
 * the `intDef` command creates a new reference e.g `intDef 5` will create an expression named `N5`
+* the commands whose names end 'All'' produce a lot of output and should be used with **small** numbers/lists etc
 
 ### Examples
 
