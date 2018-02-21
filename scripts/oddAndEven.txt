@@ -1,6 +1,7 @@
 # mutually-recursive odd/even functions
 
 # [1] must load prelude.txt before loading this file
+# [2] test by creating an integer `intDef 4` then try `evalBool IsEven N4`
 
 letrec
 {
