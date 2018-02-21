@@ -1,4 +1,4 @@
-# 'Any' and 'All' list functions using folds vs direct recursion
+# 'Any' and 'All' list functions
 
 # [1] must load prelude.txt before loading this file
 
