@@ -1,4 +1,4 @@
-# lambda
+# *Y = λf.(λx.f(x x)) (λx.f(x x))*
 This repo contains my experiments with untyped lambda calculus implemented in Haskell. I got the idea from the [Futurelearn Haskell mooc](https://www.futurelearn.com/courses/functional-programming-haskell), which I did a while back. It's all implemented from first principles using only stuff available from the Haskell prelude.
 
 There are some notes on the implementation [here](./docs/Overview.md)
@@ -6,7 +6,7 @@ There are some notes on the implementation [here](./docs/Overview.md)
 ## Installation
 1. install [stack](https://docs.haskellstack.org/en/stable/README/) - the haskell build tool
 2. ensure stack is up-to-date: `$ stack upgrade`
-3. clone this repo
+3. clone this repo `git clone https://github.com/BillyBadBoy/lam.git`
 4. cd into the newly created directory: `$ cd lam`
 5. compile the executable: `stack install`
 
@@ -78,3 +78,4 @@ which is recognized as: 2
 Enter cmd:
 quit
 ````
+More information about using the repl can be found [here](./docs/Repl.md)
