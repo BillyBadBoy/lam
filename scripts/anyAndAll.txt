@@ -1,7 +1,8 @@
 # 'Any' and 'All' list functions
 
 # [1] must load prelude.txt before loading this file
+# [2] test with: `evalBool Any Id (List2 False True)` or `evalBoolAll Any Id (List2 True True)` 
+
 
 let Any = λ p xs . Not (Null (Filter p xs));
-
 let All = λ p xs . Not (Any (Compose Not p) xs);
