@@ -35,7 +35,9 @@ let App = λ x y . x y;
 let Y = App (λ x . x) (λ x . x);
 ````
 
-Expressions can refer to 'private' definitions. These have higher precedence that 'public' definitions and may therefore override them. There is no restriction on private definitions - they can be simple or recursive (see below) and may have private definitions of their own. Private definitions are written within braces and introduced with a colon.
+Expressions can refer to 'private' definitions. These have higher precedence that 'public' definitions and may therefore override them. There is no restriction on private definitions - they can be simple or recursive (see below) and may have private definitions of their own. 
+
+Expressions with private definitions do **not** end with a semi-colon. Instead, a colon signals the presence of private deinitions, which are enclosed within braces.
 
 ````haskell
 # One and Two are private definitions visible only in the body of Three
