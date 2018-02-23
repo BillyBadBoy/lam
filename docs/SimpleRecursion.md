@@ -1,4 +1,5 @@
 # Simple Recursion
+##### Implementation notes
 
 A named expression is simply recursive if its body includes references to the expression itself. For example a named expression `Fact` for the factorial function might be defined as:
 ````haskell
