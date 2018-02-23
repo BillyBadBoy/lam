@@ -27,7 +27,7 @@ The approach taken with simple recursion only works for a single self-referencin
 (λ z ⋅ b) c
 b
 ````
-*The other accessors are these:*
+*These are the other accessors:*
 ````haskell
  =====list====  ==accessor==   
 (λ f . f a b c) (λ x y z . x) = a         // acessing the 1st item of list [a, b, c]
