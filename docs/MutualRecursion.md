@@ -20,13 +20,14 @@ The approach taken with simple recursion only works for a single self-referencin
 
 *Any list of items, e.g. `a`, `b` and `c`, can be combined into a single expression like this: `λ f . f a b c`. Note that the `f` parameter is a function, so this is a higher-order function. This can be considered as a crude list. The list elements can be recovered by applying the list to an accessor function. For example `(λ x y z . y)` accesses the middle item from a 3 item list because it reduces like this:*
 ````haskell
+ =====list====  ==accessor==   
 (λ f ⋅ f a b c) (λ x y z ⋅ y)
 (λ x y z ⋅ y) a b c
 (λ y z ⋅ y) b c
 (λ z ⋅ b) c
 b
 ````
-*Thus we have:*
+*The other eaccessors are these:*
 ````haskell
  =====list====  ==accessor==   
 (λ f . f a b c) (λ x y z . x) = a         // acessing the 1st item of list [a, b, c]
