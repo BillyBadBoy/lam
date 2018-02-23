@@ -19,7 +19,7 @@ $ cd lambda
 ````
 5. compile the executable (`lam-exe`): 
 ````
-stack install
+$ stack install
 ````
 
 ## Running the repl
