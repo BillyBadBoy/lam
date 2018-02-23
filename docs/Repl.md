@@ -87,9 +87,9 @@ Enter cmd:
 loadDefs ./scripts/factorial.txt                   -- load definitions from file
 > Defintions added to environment.
 Enter cmd:
-intDef 3                                           -- equivalent to: let N3 = λfx⋅f (f (f x));
+intDef 3                                           -- create a 'Church numeral' for the natural number 3
 > Defintion added to environment: 
-let N3 = λfx⋅f (f (f x));
+let N3 = λfx⋅f (f (f x));                           -- this definition is automatically created
 Enter cmd:
 eval Factorial N3
 > !!! Could not resolve reference: IfThenElse !!!  -- fails because of missing definition
