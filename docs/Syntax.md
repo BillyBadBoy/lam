@@ -1,6 +1,7 @@
 # Parser
 A simple parser, implemented from scratch, allows scripts to be written in a very primitive programming language. The parser converts text into named expressions and adds them to an environment. Later, expressions can be evaluated against that environment.
 
+The parser is used by the [repl](./Repl.md)
 
 ### Syntax
 
