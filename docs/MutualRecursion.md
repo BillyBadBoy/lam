@@ -1,4 +1,5 @@
 # Mutual Recursion
+##### Implementation notes
 
 Simple recursion occurs when the definition of a named expression includes references to the expression itself - the expression depends on itself. By contrast, mutual recursion is where 2 or more named expressions form a dependency cycle. For example, these definitions of `IsEven` and `IsOdd` are mutually dependent:
 ````haskell
