@@ -25,10 +25,15 @@ $ stack install
 ## Running the repl
 Once the installation is complete you can run a repl session.
 
+Start the repl:
+````haskell
+~/haskell/lambda $ lam-exe
+Enter cmd:
+````
+
 Load some basic definitions:
 
 ````haskell
-~/haskell/lambda $ lam-exe
 Enter cmd:
 loadDefs ./scripts/core.txt
 > Defintions added to environment.
