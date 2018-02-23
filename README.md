@@ -9,7 +9,7 @@ There are some notes on the implementation [here](./docs/Overview.md)
 ````
 $ stack upgrade
 ````
-3. clone this repo 
+3. clone this repo:
 ````
 $ git clone https://github.com/BillyBadBoy/lambda.git
 ````
@@ -17,7 +17,7 @@ $ git clone https://github.com/BillyBadBoy/lambda.git
 ````
 $ cd lambda
 ````
-5. compile the executable: 
+5. compile the executable (`lam-exe`): 
 ````
 stack install
 ````
