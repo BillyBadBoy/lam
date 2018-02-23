@@ -39,13 +39,13 @@ Basic input and evaluation:
 ````haskell
 Enter cmd:
 readDefs let true = \x y . x                         
-> !!! Could not parse input !!!                    -- let expressions end with a semi-colon
+> !!! Could not parse input !!!                    -- let expressions should end with a semi-colon
 Enter cmd:
 readDefs let true = \x y . x;
-> !!! Could not parse input !!!                    -- expression names begin with capital letters
+> !!! Could not parse input !!!                    -- expression names should begin with capital letters
 Enter cmd:
 readDefs let True = \x y . x;
-> Defintions added to environment.
+> Defintions added to environment.                 -- now it's OK
 Enter cmd:
 readDefs let False = \ x y . y;
 > Defintions added to environment.
@@ -98,7 +98,7 @@ loadDefs ./scripts/core.txt                        -- 'core' contains missing de
 > Defintions added to environment.
 Enter cmd:
 eval Factorial N3
-> !!! Could not resolve reference: IfThenElse !!!  -- still broken - must load factorial.txt again
+> !!! Could not resolve reference: IfThenElse !!!  -- still broken - must load 'factorial' after 'core'
 Enter cmd:
 loadDefs ./scripts/factorial.txt                   -- now factorial can see 'core' definitions
 > Defintions added to environment.
