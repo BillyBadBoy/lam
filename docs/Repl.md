@@ -13,15 +13,15 @@ The repl understands a small set of commands, which are described below.
 
 | Command | Description | Example |
 | -------- | -------- | -------- |
-| `readDefs` | enter new definitions| `readDefs` let True  = λ x y . x; let False = λ x y . y;  |
-| `loadDefs` | load new definitions from file | `loadDefs` ./scripts/core.txt |
-| `intDef`   | creates a Church numeral for a natural number | `intDef` 5 |
-| `eval`     | beta-reduces an expression completely | `eval` (λ x y . x) a b |
-| `evalAll`  | same as eval but shows all reductions | `evalAll` (λ x y . x) a b |
-| `evalInt`  | same as eval but interprets result as number | `evalInt` Succ Zero |
-| `evalBool`  | same as eval but interprets result as boolean | `evalBool` Not True |
-| `evalIntAll` | same as evalInt but shows all reductions | `evalIntAll` Succ Zero |
-| `evalBoolAll` | same as evalBool but shows all reductions | `evalBoolAll` Not True |
+| `readDefs` | enter new definitions| `readDefs let True  = λ x y . x; let False = λ x y . y;`  |
+| `loadDefs` | load new definitions from file | `loadDefs ./scripts/core.txt` |
+| `intDef`   | creates a Church numeral for a natural number | `intDef 5` |
+| `eval`     | beta-reduces an expression completely | `eval (λ x y . x) a b` |
+| `evalAll`  | same as eval but shows all reductions | `evalAll (λ x y . x) a b` |
+| `evalInt`  | same as eval but interprets result as number | `evalInt Succ Zero` |
+| `evalBool`  | same as eval but interprets result as boolean | `evalBool Not True` |
+| `evalIntAll` | same as evalInt but shows all reductions | `evalIntAll Succ Zero` |
+| `evalBoolAll` | same as evalBool but shows all reductions | `evalBoolAll Not True` |
 | `clearEnv` | clears all definitions from session | `clearEnv` |
 | `quit`   | exit the repl | `quit` |
 
