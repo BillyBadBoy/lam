@@ -28,7 +28,7 @@ let Double = λ n =  Plus n  n;
 let Double = λ n = (Plus n) n;
 ````
 
-Expressions may refer in their bodies to previously defined items:
+Expressions may refer in their bodies to *previously* defined items:
 ````haskell
 let App = λ x y . x y;
 
