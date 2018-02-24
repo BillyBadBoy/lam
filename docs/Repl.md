@@ -13,7 +13,7 @@ The repl understands a small set of commands, which are described below.
 
 | Command | Description | Example |
 | -------- | -------- | -------- |
-| `readDefs` | enter new definitions| `readDefs let T = λ x y . x; let F = λ x y . y;`  |
+| `readDefs` | enter new definitions| `readDefs let T = λ x y. x; let F = λ x y. y;`  |
 | `loadDefs` | load new definitions from file | `loadDefs ./scripts/core.txt` |
 | `intDef`   | creates a Church numeral for a natural number | `intDef 5` |
 | `eval`     | beta-reduces an expression completely | `eval (λ x y . x) a b` |
