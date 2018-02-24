@@ -13,15 +13,15 @@ The repl understands a small set of commands, which are described below.
 
 | Command | Description | Example |
 | -------- | -------- | -------- |
-| `readDefs` | enter new definitions| `readDefs` let True  = λ x y . x; let False = λ x y . y;  |
-| `loadDefs` | load new definitions from file | `loadDefs` ./scripts/core.txt |
-| `intDef`   | creates a Church numeral for a natural number | `intDef` 5 |
-| `eval`     | beta-reduces an expression completely | `eval` (λ x y . x) a b |
-| `evalAll`  | same as eval but shows all reductions | `evalAll` (λ x y . x) a b |
-| `evalInt`  | same as eval but interprets result as number | `evalInt` Succ Zero |
-| `evalBool`  | same as eval but interprets result as boolean | `evalBool` Not True |
-| `evalIntAll` | same as evalInt but shows all reductions | `evalIntAll` Succ Zero |
-| `evalBoolAll` | same as evalBool but shows all reductions | `evalBoolAll` Not True |
+| `readDefs` | enter new definitions| `readDefs let T = λ x y. x; let F = λ x y. y;`  |
+| `loadDefs` | load new definitions from file | `loadDefs ./scripts/core.txt` |
+| `intDef`   | creates a Church numeral for a natural number | `intDef 5` |
+| `eval`     | beta-reduces an expression completely | `eval (λ x y . x) a b` |
+| `evalAll`  | same as eval but shows all reductions | `evalAll (λ x y . x) a b` |
+| `evalInt`  | same as eval but cast result as number | `evalInt Succ Zero` |
+| `evalBool`  | same as eval but cast result as boolean | `evalBool Not True` |
+| `evalIntAll` | same as evalInt but shows all reductions | `evalIntAll Succ Zero` |
+| `evalBoolAll` | same as evalBool but shows all reductions | `evalBoolAll Not True` |
 | `clearEnv` | clears all definitions from session | `clearEnv` |
 | `quit`   | exit the repl | `quit` |
 
@@ -39,13 +39,13 @@ Basic input and evaluation:
 ````haskell
 Enter cmd:
 readDefs let true = \x y . x                         
-> !!! Could not parse input !!!                    -- let expressions end with a semi-colon
+> !!! Could not parse input !!!                    -- let expressions should end with a semi-colon
 Enter cmd:
 readDefs let true = \x y . x;
-> !!! Could not parse input !!!                    -- expression names begin with capital letters
+> !!! Could not parse input !!!                    -- expression names should begin with capital letters
 Enter cmd:
 readDefs let True = \x y . x;
-> Defintions added to environment.
+> Defintions added to environment.                 -- now it's OK
 Enter cmd:
 readDefs let False = \ x y . y;
 > Defintions added to environment.
@@ -87,9 +87,9 @@ Enter cmd:
 loadDefs ./scripts/factorial.txt                   -- load definitions from file
 > Defintions added to environment.
 Enter cmd:
-intDef 3                                           -- equivalent to: let N3 = λfx⋅f (f (f x));
+intDef 3                                           -- create a 'Church numeral' for the natural number 3
 > Defintion added to environment: 
-let N3 = λfx⋅f (f (f x));
+let N3 = λfx⋅f (f (f x));                           -- this definition is automatically created
 Enter cmd:
 eval Factorial N3
 > !!! Could not resolve reference: IfThenElse !!!  -- fails because of missing definition
@@ -98,7 +98,7 @@ loadDefs ./scripts/core.txt                        -- 'core' contains missing de
 > Defintions added to environment.
 Enter cmd:
 eval Factorial N3
-> !!! Could not resolve reference: IfThenElse !!!  -- still broken - must load factorial.txt again
+> !!! Could not resolve reference: IfThenElse !!!  -- still broken - must load 'factorial' after 'core'
 Enter cmd:
 loadDefs ./scripts/factorial.txt                   -- now factorial can see 'core' definitions
 > Defintions added to environment.

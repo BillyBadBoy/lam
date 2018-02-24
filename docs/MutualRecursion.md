@@ -1,4 +1,5 @@
 # Mutual Recursion
+##### Implementation notes
 
 Simple recursion occurs when the definition of a named expression includes references to the expression itself - the expression depends on itself. By contrast, mutual recursion is where 2 or more named expressions form a dependency cycle. For example, these definitions of `IsEven` and `IsOdd` are mutually dependent:
 ````haskell
@@ -17,7 +18,16 @@ The approach taken with simple recursion only works for a single self-referencin
 -----
 *Aside: combining arbitrary items*
 
-*Any list of items, e.g. `a`, `b` and `c`, can be combined into a single expression like this: `λ f . f a b c`. This can be considered as a crude list. The list elements can be recovered using accessors. For example `(λ x y z . y)` accesses the middle item from a 3 item list. Note that in the list expression the `f` parameter is a function, so the list is a higher-order function which is applied to an accessor function. Thus we have*
+*Any list of items, e.g. `a`, `b` and `c`, can be combined into a single expression like this: `λ f . f a b c`. Note that the `f` parameter is a function, so this is a higher-order function. This can be considered as a crude list. The list elements can be recovered by applying the list to an accessor function. For example `(λ x y z . y)` accesses the middle item from a 3 item list because it reduces like this:*
+````haskell
+ =====list====  ==accessor==   
+(λ f ⋅ f a b c) (λ x y z ⋅ y)
+(λ x y z ⋅ y) a b c
+(λ y z ⋅ y) b c
+(λ z ⋅ b) c
+b
+````
+*These are the other accessors:*
 ````haskell
  =====list====  ==accessor==   
 (λ f . f a b c) (λ x y z . x) = a         // acessing the 1st item of list [a, b, c]

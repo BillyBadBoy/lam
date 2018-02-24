@@ -5,18 +5,35 @@ There are some notes on the implementation [here](./docs/Overview.md)
 
 ## Installation
 1. install [stack](https://docs.haskellstack.org/en/stable/README/) - the haskell build tool
-2. ensure stack is up-to-date: `$ stack upgrade`
-3. clone this repo `git clone https://github.com/BillyBadBoy/lam.git`
-4. cd into the newly created directory: `$ cd lam`
-5. compile the executable: `stack install`
+2. ensure stack is up-to-date: 
+````
+$ stack upgrade
+````
+3. clone this repo:
+````
+$ git clone https://github.com/BillyBadBoy/lambda.git
+````
+4. cd into the newly created directory: 
+````
+$ cd lambda
+````
+5. compile the executable (`lam-exe`): 
+````
+$ stack install
+````
 
 ## Running the repl
 Once the installation is complete you can run a repl session.
 
+Start the repl:
+````haskell
+~/haskell/lambda $ lam-exe
+Enter cmd:
+````
+
 Load some basic definitions:
 
 ````haskell
-~/haskell/lambda $ lam-exe
 Enter cmd:
 loadDefs ./scripts/core.txt
 > Defintions added to environment.

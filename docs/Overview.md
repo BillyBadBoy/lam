@@ -4,7 +4,7 @@ Implementation of untyped lambda calculus in Haskell using only functions availa
 
 The design is layered, with each layer building on the previous. The layers are described below.
 
-### Lamba Expressions
+### Lambda Expressions
 The base layer contains lambda expressions along with certain key functions related to α and β conversion. Lambda Expressions are represented as a Haskell data type:
 
 ````haskell
