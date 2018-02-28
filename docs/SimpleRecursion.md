@@ -28,11 +28,11 @@ Fact = g Fact
 ````
 `Fact` is revealed to be a fixed-point of the non-recursive function `g`. It turns out that we can find fixed-points of functions using the famous [Y-combinator](https://en.wikipedia.org/wiki/Fixed-point_combinator), so that:
 ````haskell
-Fact = fixed-point-of g = Y g
+Fact = fixed-point-of-g = Y g
 ````
 where `y` is the Y-combinator and `g` is as defined above. This solves our problem - we now have a definition of `Fact` i.e. `Y g` that is non-recursive.
 
-Generalising from the above example gives this procedure for dealing with simply-recursive functions:
+Generalizing from the above example gives this procedure for dealing with simply-recursive functions:
 ````haskell
 # F is a simply-recursive defintion (because its body contains 1+ references to F)
 # (the x's stand for any non-recusive content)
