@@ -5,7 +5,7 @@ The parser is used by the [repl](./Repl.md).
 
 ### Syntax
 
-This section describes the syntax rules enforced by the parser. These go beyond what is required by the underlying data in some respects. For instance, the names of named expressions and lambda terms are merely strings as far as the data constructors are concerned. But the parser requires that the names of named expressions begin with a capital letter, whereas lambda variables must begin with lower-case letters.
+_This section describes the syntax rules enforced by the parser. These go beyond what is required by the underlying data in some respects. For instance, the names of named expressions and lambda terms are merely strings as far as the data constructors are concerned. But the parser requires that the names of named expressions begin with a capital letter, whereas lambda variables must begin with lower-case letters._
 
 Simple named expressions are introduced with the `let` keyword and end with a semi-colon. Note that expression names must begin with a capital letter, while lambda terms begin with lower-case letters.
 
