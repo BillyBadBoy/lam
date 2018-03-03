@@ -54,7 +54,7 @@ F = λ f . f (λn.(IsZero n) True (F (λ x y . y) (Pred n))) (λn.(IsZero n) Fal
 ````
 Notice that there are no references to `IsEven` or `IsOdd` in this equation. This is a definition of `F` that includes references to `F` in its body - i.e. this is an example of simple recursion.
 
-Now we produce a non-recursive definition of `F` by following the procedure for [simple recursion](./SimpleRecursion.md) - let's call the result `F'`. The final step is to re-use the equations above for `IsEven` and `IsOdd` (but with `F'` instead of the equivalent F`) :
+Now we produce a non-recursive definition of `F` by following the procedure for [simple recursion](./SimpleRecursion.md) - let's call the result `F'`. The final step is to re-use the equations above for `IsEven` and `IsOdd` (but with `F'` instead of the equivalent `F`) :
 ````haskell
 IsEven = F' (λ x y . x)
 IsOdd  = F' (λ x y . y)
