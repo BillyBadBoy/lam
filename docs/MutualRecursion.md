@@ -13,7 +13,7 @@ IsOdd  = \ n . (IsZero n) False (IsEven (Pred n));
 ````
 `IsEven` depends on `IsOdd` which depends on `IsEven` which depends on... etc
 
-We would like to re-use the approach taken with simple recursion - but that only works for a single self-referencing definition. Therefore we must somehow combine all the mutually recursive definitions (2 in the above example) into a single simply-recursive definition. Furthermore, the original functions (`IsEven` and `IsOdd`) must still be recoverable from the combined function. This process is described below after a quick note about combining things using lambda calculus.
+We would like to re-use the approach taken with [simple recursion](./SimpleRecursion.md) - but that only works for a single self-referencing definition. Therefore we must somehow combine all the mutually recursive definitions (2 in the above example) into a single simply-recursive definition. Furthermore, the original functions (`IsEven` and `IsOdd`) must still be recoverable from the combined function. This process is described below after a quick note about combining things using lambda calculus.
 
 -----
 *Aside: combining arbitrary items*
