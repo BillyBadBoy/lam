@@ -26,8 +26,8 @@ let True  = λ x . (λ y . x);
 let True  = λ x y . x;
 
 # these applications are equivalent
-let Double = λ n =  Plus n  n;
-let Double = λ n = (Plus n) n;
+let Double = λ n .  Plus n  n;
+let Double = λ n . (Plus n) n;
 ````
 
 Expressions may refer in their bodies to *previously* defined items:
