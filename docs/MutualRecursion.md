@@ -34,7 +34,7 @@ b
 (λ f . f a b c) (λ x y z . y) = b         // acessing the 2nd item of list [a, b, c]
 (λ f . f a b c) (λ x y z . z) = c         // acessing the 3rd item of list [a, b, c]
 ````
-*The bottom line is that we can easily combine a list of expressions into a single expression and recover them later using an appropriate accessor. Obviously this approach can be applied to lists of any finite length*
+*Thus we can easily combine a list of expressions into a single expression and recover them later using an appropriate accessor. Obviously this approach can be applied to lists of any fixed finite length*
 
 -----
 Returning to our problem, begin by combining the definitions of `IsEven` and `IsOdd` into a 2 element list called `F`:
