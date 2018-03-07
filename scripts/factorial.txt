@@ -1,6 +1,6 @@
 # recursive factorial implementation
 
-# [1] must load prelude.txt before loading this file
+# [1] must load core.txt before loading this file
 # [2] try this function with small numbers unless you want to wait FOREVER!
 # [3] test by creating an integer, say `intDef 3` then try `evalInt Factorial N3` or `evalIntAll Factorial N3` 
 
