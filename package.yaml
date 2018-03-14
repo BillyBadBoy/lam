@@ -1,6 +1,6 @@
 name:                lam
 version:             0.1.0.0
-github:              "githubuser/foo"
+github:              "BillyBadBoy/lambda"
 license:             BSD3
 author:              "William Morgan"
 maintainer:          "william.morgan@hotmail.co.uk"
@@ -9,14 +9,9 @@ copyright:           "2018 William Morgan"
 extra-source-files:
 - README.md
 
-# Metadata used when publishing your package
-# synopsis:            Short description of your package
-# category:            Web
+synopsis:            Untyped lambda calculus experiments
 
-# To avoid duplicated efforts in documentation and dealing with the
-# complications of embedding Haddock markup inside cabal files, it is
-# common to point users to the README.md file.
-description:         Please see the README on Github at <https://github.com/githubuser/foo#readme>
+description:         Please see the README on Github at <https://github.com/BillyBadBoy/lambda#readme>
 
 dependencies:
 - base >= 4.7 && < 5
