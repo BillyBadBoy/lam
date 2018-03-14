@@ -13,7 +13,7 @@ data Λ = V Var | A Λ Λ | Λ Var Λ     -- constructors for (1) terms (2) appl
 
 Lambda expressions are anonymous - there is no concept of a named expression. This means that an expression can only be re-used by literally copying it in its entirety (since it can't be referred to by name). This limitation is remedied by *Named Expressions*.
 
-Lambda expressions are defined in [Terms.hs](../src/Terms.hs)
+Lambda expressions are implemented in [Terms.hs](../src/Terms.hs)
 
 ### Named Expressions
 A named expression is similar to a lambda expression except that it has a name and its body may itself contain references to other named expressions. This allows complex expressions to be defined conveniently by re-using earlier definitions, but it's really no more than syntactic sugar because all references are translated into raw anonymous lambda expressions before evaluation. (This translation is particularly interesting when [simple](./SimpleRecursion.md) or [mutual](./MutualRecursion.md) recursion is involved)
@@ -21,14 +21,14 @@ A named expression is similar to a lambda expression except that it has a name a
 ##### Environment
 Named expressions live inside an environment. References are translated into lambda expressions by looking them up in the environment. An environment is an ordered structure insofar as expressions can only refer to named expressions added earlier. In addition named expressions may be private, meaning that only some expressions may refer to them.
 
-Named expressions and environments are defined in [Env.hs](../src/Env.hs)
+Named expressions and environments are implemented in [Env.hs](../src/Env.hs)
 
 ### Parser syntax
 A simple [parser](./Syntax.md) allows named expressions to be created from scripts that resemble a primitive programming language. The parser is implemented using the approach described by Erik Meijer in his [Haskell course](https://www.edx.org/course/introduction-functional-programming-delftx-fp101x-0).
 
-The parser is defined in [Parse.hs](../src/Parse.hs). 
+The parser is implemented in [Parse.hs](../src/Parse.hs). 
 
 ### REPL
 The final layer is a [REPL](./Repl.md) which allows a user to interactively define and evaluate expressions. These can be typed directly into the repl or loaded from scripts files.
 
-The REPL is defined in [Repl.hs](../src/Repl.hs)
+The REPL is implemented in [Repl.hs](../src/Repl.hs)
