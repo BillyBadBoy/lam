@@ -8,7 +8,7 @@ A named expression is simply recursive if its body includes references to the ex
 Fact = λ n . IfThenElse (IsZero n) One (Mult n (Fact (Pred n)))
                                                 ^^^^
 ````
-This is simply recursive because `Fact`'s body includes a reference to `Fact`. To convert this to a raw lambda expression each reference (`IfThenElse`, `IsZero` etc) is replaced by its definition. This is straightforward except for `Fact`because its definition includes a reference to `Fact`. We would therefore be stuck in a loop - forever replacing a reference to `Fact` by its definition, only to discover that we have introduced yet another reference to `Fact`.
+This is simply recursive because `Fact`'s body includes a reference to `Fact`. To convert this to a raw lambda expression each reference in the right-hand side (`IfThenElse`, `IsZero` etc) is replaced by its definition. This would imply replacing the `Fact` in the right-hand side with the definition of `Fact` (i.e. the right-hand side in its entirety), which includes a reference to `Fact`. We would therefore be stuck in a loop - forever replacing a reference to `Fact` by its definition, only to discover that we have introduced yet another reference to `Fact`.
 
 The solution is to re-formulate the definition of `Fact` and use the Y-combinator.
 
