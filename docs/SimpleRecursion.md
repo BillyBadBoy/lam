@@ -35,7 +35,7 @@ where `y` is the Y-combinator and `g` is as defined above. This solves our probl
 Generalizing from the above example gives this procedure for dealing with simply-recursive functions:
 ````haskell
 # F is a simply-recursive defintion (because its body contains 1+ references to F)
-# (the x's stand for any non-recusive content)
+# (the x's stand for any non-recursive content)
 F = xxxFxxxFxxx  
 
 # abstract the F's out of the body & apply to F
