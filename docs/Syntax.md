@@ -58,10 +58,10 @@ A [recursive definition](./SimpleRecursion.md) cannot be made using a `let` stat
 
 ````haskell
 # ERROR! this doesn't work because 'Factorial' is used in the body
-let    Factorial = λ n . IfThenElse (IsZero n) One (Mult n (Factorial (Pred n))) : {let One = Succ Zero;}
+let    Factorial = λn . IfThenElse (IsZero n) One (Mult n (Factorial (Pred n))) : {let One = Succ Zero;}
 
 # this is OK because it begins with 'letrec'
-letrec Factorial = λ n . IfThenElse (IsZero n) One (Mult n (Factorial (Pred n))) : {let One = Succ Zero;}
+letrec Factorial = λn . IfThenElse (IsZero n) One (Mult n (Factorial (Pred n))) : {let One = Succ Zero;}
 ````
 There are *block* versions of both `let` and `letrec` expressions which allow multiple definitions to share private definitions. Also, in the case of a `letrec` block, the definitions may be [mutually recursive](./MutualRecursion.md). Note that while the block as a whole may have private definitions, individual definitions in the block must be simple `let` definitions *without* private definitions.
 
