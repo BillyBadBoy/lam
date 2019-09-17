@@ -27,7 +27,7 @@ let Second = λ p . p False;
 
 let Null   = λ p . p (λ x y . False);
 
-# convenience functions for creaing small lists
+# convenience functions for creating small lists
 let List2 = λ x y     .                 Pair x (Pair y Nil);
 let List3 = λ x y z   .         Pair x (Pair y (Pair z Nil));
 let List4 = λ w x y z . Pair w (Pair x (Pair y (Pair z Nil)));
