@@ -21,11 +21,11 @@ We would like to re-use the approach taken with [simple recursion](./SimpleRecur
 *Any list of items, e.g. `a`, `b` and `c`, can be combined into a single expression like this: `λ f . f a b c`. Note that the `f` parameter is a function, so this is a higher-order function. This can be considered as a crude list. The list elements can be recovered by applying the list to an accessor function. For example `(λ x y z . y)` accesses the middle item from a 3 item list because it reduces like this:*
 ````haskell
  =====list====  ==accessor==   
-(λ f ⋅ f a b c) (λ x y z ⋅ y)
+(λ f ⋅ f a b c) (λ x y z ⋅ y)    // apply the get-middle-item accessor to the list [a, b, c]
 (λ x y z ⋅ y) a b c
 (λ y z ⋅ y) b c
 (λ z ⋅ b) c
-b
+b                                // 'b' has been succesfully extracted from list!
 ````
 *These are all the accessors for a 3 item list:*
 ````haskell
