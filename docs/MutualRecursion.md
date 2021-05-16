@@ -37,17 +37,17 @@ b                                // 'b' has been succesfully extracted from list
 *Thus we can easily combine a list of expressions into a single expression and recover them later using an appropriate accessor. Obviously this approach can be applied to lists of any fixed finite length*
 
 -----
-Returning to our problem, begin by combining the definitions of `IsEven` and `IsOdd` into a 2 element list called `F`. The 1st element of `F` is the definition of`IsEven` and the 2nd element of `F` is the definition of `IsOdd`:
+Returning to our problem, begin by combining the definitions of `IsEven` and `IsOdd` into a 2 element list called `F`. We use the approach described above, which gives an expression of the form `λ f . f a b` where `a` is the definition of `IsEven` and `b` is the definition of `IsOdd`:
 ````haskell
 F = λ f . f (λn.(IsZero n) True (IsOdd (Pred n)))  (λn.(IsZero n) False (IsEven (Pred n)))
              ^^^^^^^^^^^^^^IsEven^^^^^^^^^^^^^^^    ^^^^^^^^^^^^^^IsOdd^^^^^^^^^^^^^^^^^^
 ````
 Notice that the definition of `F` still includes explicit references to `IsEven` and `IsOdd` which we need to remove.
 
-As noted in the aside above, the elements of list `F` can be retrieved using accessors, giving:
+As noted in the aside above, the elements of list `F` (the definitions of `IsEven` and `IsOdd`) can be retrieved using accessors, giving:
 ````text
-IsEven = F (λ x y . x)      // 1st element of F
-IsOdd  = F (λ x y . y)      // 2nd element of F
+IsEven = F (λ x y . x)      // (λ x y . x) is the get-first-item accessor
+IsOdd  = F (λ x y . y)      // (λ x y . y) is the get-second-item accessor
 ````
 These are definitions of `IsEven` and `IsOdd` in terms of `F`, which we can substitute back into the definition of `F` (to remove the explicit references to `IsEven` and `IsOdd`) :
 ````haskell
