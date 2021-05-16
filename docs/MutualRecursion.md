@@ -73,7 +73,7 @@ En = bodyEn
 # combine into a single expression:
 F = λ f . f (bodyE1) (bodyE2) ... (bodyEn)
 
-# replace every reference Ei in the right-hand side bodies with: F (λ x1 x2 .. xn . xi)
+# replace every reference Ei in the right-hand side bodies with: F (λ x1 x2 ... xn . xi)
 # call the transformed bodies: bodyE1' bodyE2' ... bodyEn', giving:
 F = λ f . f (bodyE1') (bodyE2') ... (bodyEn')
 
